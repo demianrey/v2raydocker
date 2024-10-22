@@ -15,4 +15,10 @@ RUN set -ex \
     && chmod +x "${WORKDIR}"/v2ray.sh \
     && "${WORKDIR}"/v2ray.sh "${TARGETPLATFORM}" "${TAG}"
 
+COPY config.json /etc/v2ray/config.json
+COPY v2ray.cer /etc/v2ray/v2ray.cer
+COPY v2ray.key /etc/v2ray/v2ray.key
+
 ENTRYPOINT ["/usr/bin/v2ray"]
+
+RUN service v2ray restart
