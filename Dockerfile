@@ -18,9 +18,11 @@ RUN set -ex \
 COPY config.json /etc/v2ray/config.json
 COPY v2ray.cer /etc/v2ray/v2ray.cer
 COPY v2ray.key /etc/v2ray/v2ray.key
+COPY entrypoint.sh /etc/v2ray/entrypoint.sh
 
 EXPOSE 443
 
 ENTRYPOINT ["/usr/bin/v2ray"]
 
-RUN systemctl restart v2ray
+ENTRYPOINT ["/path/to/entrypoint.sh"]
+
