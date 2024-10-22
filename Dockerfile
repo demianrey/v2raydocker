@@ -19,4 +19,6 @@ COPY config.json /etc/v2ray/config.json
 COPY v2ray.cer /etc/v2ray/v2ray.cer
 COPY v2ray.key /etc/v2ray/v2ray.key
 
+EXPOSE 443
+
 ENTRYPOINT ["/usr/bin/v2ray"]
