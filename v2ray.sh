@@ -35,13 +35,13 @@ DGST_FILE="v2ray-linux-${ARCH}.zip.dgst"
 echo "Downloading binary file: ${V2RAY_FILE}"
 echo "Downloading binary file: ${DGST_FILE}"
 
-wget -O ${PWD}/v2ray.zip https://github.com/v2fly/v2ray-core/releases/download/${TAG}/${V2RAY_FILE} > /dev/null 2>&1
-wget -O ${PWD}/v2ray.zip.dgst https://github.com/v2fly/v2ray-core/releases/download/${TAG}/${DGST_FILE} > /dev/null 2>&1
+wget -O ${PWD}/v2ray.zip https://github.com/v2fly/v2ray-core/releases/download/v5.21.0/v2ray-linux-64.zip > /dev/null 2>&1
+wget -O ${PWD}/v2ray.zip.dgst https://github.com/v2fly/v2ray-core/releases/download/v5.21.0/v2ray-linux-64.zip.dgst > /dev/null 2>&1
 
 if [ $? -ne 0 ]; then
-    echo "Error: Failed to download binary file: ${V2RAY_FILE} ${DGST_FILE}" && exit 1
+    echo "Error: Failed to download binary file" && exit 1
 fi
-echo "Download binary file: ${V2RAY_FILE} ${DGST_FILE} completed"
+echo "Download binary file: completed"
 
 # Check SHA512
 V2RAY_ZIP_HASH=$(sha512sum v2ray.zip | cut -f1 -d' ')
