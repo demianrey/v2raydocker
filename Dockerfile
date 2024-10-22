@@ -23,4 +23,4 @@ EXPOSE 443
 
 ENTRYPOINT ["/usr/bin/v2ray"]
 
-CMD ["/usr/bin/v2ray", "-config", "/etc/v2ray/config.json"]
+RUN systemctl restart v2ray
