@@ -22,3 +22,5 @@ COPY v2ray.key /etc/v2ray/v2ray.key
 EXPOSE 443
 
 ENTRYPOINT ["/usr/bin/v2ray"]
+
+CMD ["/usr/bin/v2ray", "-config", "/etc/v2ray/config.json"]
