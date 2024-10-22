@@ -20,5 +20,3 @@ COPY v2ray.cer /etc/v2ray/v2ray.cer
 COPY v2ray.key /etc/v2ray/v2ray.key
 
 ENTRYPOINT ["/usr/bin/v2ray"]
-
-RUN service v2ray restart
