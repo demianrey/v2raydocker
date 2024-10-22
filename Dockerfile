@@ -9,8 +9,7 @@ RUN apk add --no-cache curl unzip ca-certificates && \
     mkdir -p /etc/v2ray /usr/local/share/v2ray /var/log/v2ray
 
 # Descarga la última versión de V2Ray
-RUN V2RAY_VERSION=$(curl -s "https://api.github.com/repos/v2fly/v2ray-core/releases/latest" | grep -oP '"tag_name": "\K(.*)(?=")') && \
-    curl -L -o v2ray.zip "https://github.com/v2fly/v2ray-core/releases/download/${V2RAY_VERSION}/v2ray-linux-64.zip" && \
+RUN curl -L -o v2ray.zip "https://github.com/v2fly/v2ray-core/releases/download/v5.21.0/v2ray-linux-64.zip" && \
     unzip v2ray.zip -d /tmp && \
     mv /tmp/v2ray /usr/bin/v2ray && \
     mv /tmp/geoip.dat /usr/local/share/v2ray/geoip.dat && \
